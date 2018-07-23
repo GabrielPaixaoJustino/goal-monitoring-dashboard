@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+	<head> 	
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		 <style>
+		 /* Make the image fully responsive */
+		 .carousel-inner img {
+		     width: 100%;
+		     height: 100%;
+		 }
+		 </style>
+	</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+		<body onload="carregaPaineis()">
+			<div id="content">
+				<div id="header">
+					<h2 style="font-size: 80px;">Metas</h2><h2 style="color:red;font-size: 80px;"> & </h2><h2 style="font-size: 80px;">Resultados</h2>
+					<div id="logo" style="padding-right:15%;">
+						<img src="Images\LogoAjustado2.png">
+					</div>
+				</div>
+				
+				<div id="demo" class="carousel slide" data-ride="carousel">
+
+				  <!-- Indicators -->
+				  <ul class="carousel-indicators">
+				    <li data-target="#demo" data-slide-to="0" class="active"></li>
+				    <li data-target="#demo" data-slide-to="1"></li>
+				  </ul>
+				  
+				  <!-- The slideshow -->
+				  <div class="carousel-inner">
+				    <div class="carousel-item active" id="Painel1">
+			    		<div id="row1">
+			    			<div class="squareRed" style="width:160px;"></div>
+			    			<div class="squareWhite" style="width:160px;"></div>
+			    			<div class="squareWhite" style="width:160px;"></div>
+			    			<div class="squareGreen" style="width:160px;"></div>
+			    		</div>
+			    			
+			    		<div id="row2">
+			    			<div class="squareWhite" style="width:160px;"></div>
+			    			<div class="squareWhite" style="width:160px;"></div>
+			    			<div class="squareWhite" style="width:320px;"></div>
+			    		</div>
+				    </div>
+				    <div class="carousel-item" id="Painel2">
+				    	<div id="row1">
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    	</div>
+				    		
+				    	<div id="row2">
+				    		<div class="squareRed" style="width:160px;"></div>
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    		<div class="squareGreen" style="width:160px;"></div>
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    	</div>
+				    	
+				    	<div id="row3">
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    		<div class="squareWhite" style="width:160px;"></div>
+				    		<div class="squareWhite" style="width:420px;"></div>
+				    	</div>
+				    </div>
+				  </div>
+				  
+				  <!-- Left and right controls -->
+				  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+				    <span class="carousel-control-prev-icon"></span>
+				  </a>
+				  <a class="carousel-control-next" href="#demo" data-slide="next">
+				    <span class="carousel-control-next-icon"></span>
+				  </a>
+				</div>
+			</div>
+		</body>
+	</meta>		
+</html>
+<script type="text/javascript" charset="utf-8">
+	function carregaPaineis(){
+		var url1 = "";
+		
+		$.ajax({
+			url: url1,
+		})
+		.done(function(data) {
+			//validateData(data);
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+			console.log(url1)
+		})
+		.always(function() {
+			console.log("complete");
+		});
+	}
+
+	function validateData(data){
+		var width = 160;
+		var colorSquare = "squareWhite"
+
+		var obj = JSON.parse(data);
+
+		if(obj.valor1 < 0){
+			colorSquare = "squareRed"
+		}
+
+		if (obj.valor > 600) {
+			colorSquare = "squareGreen"
+		}
+	}
+</script>
