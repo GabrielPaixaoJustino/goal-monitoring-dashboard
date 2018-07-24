@@ -44,8 +44,11 @@
 			
 			
 			<div id="row1">
+				<div id="divInterna">					
+				
 			 <c:if test = "${meta < 1000000}">
 					<div class="squareWhite" style="width:160px; color:red;">Total: <c:out value="${meta}" /></div>
+
 			 </c:if>
 			 <c:if test = "${meta >= 1000000}">
 					<div class="squareWhite" style="width:160px; color:blue;background-color:red;">Total:<c:out value="${meta}" /></div>
@@ -55,8 +58,10 @@
 				<div class="squareWhite" style="width:160px;"><c:out value="${VN.rows[0].VALOR}" /></div>
 				<div class="squareGreen" style="width:160px;"><c:out value="${VN.rows[0].META}" /></div>
 			</div>
+			</div>
 				
 			<div id="row2">
+				
 				<div class="squareWhite" style="width:160px;"></div>
 				<div class="squareWhite" style="width:160px;"></div>
 				<div class="squareWhite" style="width:320px;"></div>
