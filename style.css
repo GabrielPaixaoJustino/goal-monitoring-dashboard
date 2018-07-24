@@ -23,6 +23,14 @@
 
 }
 
+#divInterna{
+	display:table;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 30px;
+
+}
+
 body{
 	background-image: url("../Images/fundo.png");
 }
@@ -41,8 +49,6 @@ h2{
 	text-align: center;
 
 
-
-	
 }
 
 .squareGreen{
@@ -61,7 +67,5 @@ h2{
 	float:left;
 	border-radius: 8px;
 	text-align: center;
+	
 }
-
-
-
